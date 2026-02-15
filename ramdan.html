@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Surprise</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: monospace;
+  text-align: center;
+  color: white;
+  background: linear-gradient(-45deg, #000000, #1a001f, #000814, #140021);
+  background-size: 400% 400%;
+  animation: bgMove 8s ease infinite;
+}
+
+/* خلفية متحركة */
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+#glitchScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% {opacity: 1;}
+  50% {opacity: 0.4;}
+  100% {opacity: 1;}
+}
+
+#mainContent {
+  display: none;
+  margin-top: 150px;
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 20px;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+/* زر Yes متحرك */
+#yesBtn {
+  background-color: #ff2e92;
+  color: white;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s;
+}
+
+#yesBtn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 10px #ff2e92;}
+  50% {box-shadow: 0 0 25px #ff2e92;}
+  100% {box-shadow: 0 0 10px #ff2e92;}
+}
+
+#noBtn {
+  background-color: gray;
+  color: white;
+  position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<div id="glitchScreen">
+  System Error... Reconnecting...
+</div>
+
+<div id="mainContent">
+  <h2>I think I warned you about unreliable links?!?! </h2>
+  <h1>Ramadan Kareem </h1>
+  <h2>Will you be spending it with me?</h2>
+  <button id="yesBtn" onclick="alert('I knew it ')">Yes</button>
+  <button id="noBtn">No</button>
+</div>
+
+<script>
+setTimeout(function(){
+  document.getElementById("glitchScreen").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+}, 5000);
+
+let noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function() {
+  noBtn.style.position = "absolute";
+  noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+  noBtn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+});
+</script>
+
+</body>
+</html>
+
+
+
+
