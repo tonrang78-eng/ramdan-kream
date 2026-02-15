@@ -96,6 +96,7 @@ button {
 </div>
 
 <script>
+// هذا الجزء يخفي شاشة الخطأ ويظهر المحتوى بعد 5 ثوانٍ
 setTimeout(function(){
   document.getElementById("glitchScreen").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
@@ -103,12 +104,14 @@ setTimeout(function(){
 
 let noBtn = document.getElementById("noBtn");
 
+// هذا الجزء يجعل زر No يهرب عند اقتراب الماوس
 noBtn.addEventListener("mouseover", function() {
-  t.co/234dBfSBto.position = "absolute";
-  t.co/234dBfSBto.left = Math.random() * (window.innerWidth - 100) + "px";
-  t.co/yi2hAbnkmm = Math.random() * (window.innerHeight - 50) + "px";
+  noBtn.style.position = "absolute";
+  noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+  noBtn.style.top = Math.random() * (window.innerHeight - 50) + "px";
 });
 </script>
+5:
 
 </body>
 </html>
